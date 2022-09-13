@@ -3,7 +3,7 @@
 ## Get Repo Info
 
 ```console
-helm repo add grafana https://guidanz.github.io/skedler-helmchart
+helm repo add skedler https://guidanz.github.io/skedler-helmchart
 helm repo update
 ```
 
