@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  skedler:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-13T12:00:47.744438+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 3eada78207910a87d2c7c19ee0c38534ecdb4266e8aa2df33d6f7c9017b37d1c
+    name: skedler
+    type: application
+    urls:
+    - skedler-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-09-13T12:00:47.743707+05:30"
