@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skedler-orgs
+  labels:
+    app: skedler
+data:
+  orgs.yml: |-
+    ---
+    ##########
+    # orgs:
+    #   - name: First Org
+    #   - name: Second Org
+    

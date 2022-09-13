@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skedler-datasources
+  labels:
+    app: skedler
+data:
+  datasources.yml: |-
+    ---
+    ###################
+    datasources:
+      # # name of the datasource. Required
+      # - name: "Grafana-1"
+      # # In org where skedler is going to create the datasource, default is 'Main Org'. You can change it as your org name, If it is already created in skedler
+      #   org_name: "test org"
+      #   # datasource type. Required
+      #   type: "grafana"
+      #   data:
+      #     grafana_url: "http://localhost:4000"
+      #     auth_enabled: true
+      #     # Authentication type. Deafult is "basicAuth". You can change it as "apiKey" if you are using apikey for authentication
+      #     auth_type: "basicAuth"
+      #     auth_credentials:
+      #       grafana_username: "admin"
+      #       grafana_password: "admin"
+      #       apiKey: ""
+      #     grafana_ssl:
+      #       ssl_certificate: ""
+      #       ssl_key: ""
+      #       ssl_certificate_authorities: ""
+    
