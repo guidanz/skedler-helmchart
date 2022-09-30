@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skedler
+  labels:
+    app: skedler
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: skedler
+  template:
+    metadata:
+      labels:
+        app: skedler
+    spec:
+      containers:
+      - name: skedler
+        image: skedler/reports:provision
+        imagePullPolicy: Always
+        ports:
+        - containerPort: {{ .Values.service.port }}
+          protocol: TCP
+        volumeMounts:
+        - name: skedler-storage
+          mountPath: /var/lib/skedler-xg
+        - name: skedler-config 
+          mountPath: /usr/share/skedler-xg/reporting.yml
+          subPath: reporting.yml
+        - name: skedler-orgs 
+          mountPath: /usr/share/skedler-xg/provisioning/orgs/orgs.yml
+          subPath: orgs.yml
+        - name: skedler-datasources 
+          mountPath: /usr/share/skedler-xg/provisioning/datasources/datasources.yml
+          subPath: datasources.yml
+        - name: skedler-notifications 
+          mountPath: /usr/share/skedler-xg/provisioning/notifications/notifications.yml
+          subPath: notifications.yml
+      volumes:
+      - name: skedler-storage
+      - name: skedler-config
+        configMap:
+          defaultMode: 420
+          name: skedler-config
+      - name: skedler-orgs
+        configMap:
+          defaultMode: 420
+          name: skedler-orgs
+      - name: skedler-datasources
+        configMap:
+          defaultMode: 420
+          name: skedler-datasources
+      - name: skedler-notifications
+        configMap:
+          defaultMode: 420
+          name: skedler-notifications
+
+    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: skedler
+  labels:
+    app: skedler
+spec:
+  selector:
+    app: skedler
+  ports:
+  - port: {{ .Values.service.port }}
+    protocol: TCP
+  type: {{ .Values.service.type }}
+  

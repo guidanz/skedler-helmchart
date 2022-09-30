@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skedler-datasources
+  labels:
+    app: skedler
+data:
+  datasources.yml: |-
+    ###################
+    datasources:
+      {{- if .Values.datasources }}
+      {{- tpl (toYaml .Values.datasources) . | nindent 4 }}
+      {{- end }}
+  

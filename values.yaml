@@ -1,0 +1,159 @@
+# Default values for mychart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: skedler/reports:provision
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: LoadBalancer
+  port: 3005
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Skedler default username and password. You can change username & password for your convenient to create skedler account.
+skedlerUsername: "admin@skedler.com"
+skedlerPassword: "admin"
+
+ # The port which skedler need to run redis
+redisPort: 6379
+
+# The public facing host name or IP address used to access Skdler from a browser
+host: "0.0.0.0"
+# Protocol (http, https)
+protocol: "http"
+
+# T0 activate & persist the license
+licenseEmail: ""
+licenseKey: ""
+
+
+
+
+orgs: []
+# orgs: 
+#   # name of the org to create in Skedler. Required
+#   - name: First Org
+#   - name: Second Org
+
+datasources: []
+
+# datasources:
+#     # name of the datasource. Required
+#   - name: "Grafana-1"
+#   # In org where skedler is going to create the datasource, default is 'Main Org'. You can change it as your org name, If it is already created in skedler
+#     org_name: "Main Org"
+#     # datasource type. Required
+#     type: "grafana"
+#     data:
+#       grafana_url: "http://localhost:3000"
+#       auth_enabled: true
+#       # Authentication type. Deafult is "basicAuth". You can change it as "apiKey" if you are using apikey for authentication
+#       auth_type: "basicAuth"
+#       auth_credentials:
+#         grafana_username: "admin"
+#         grafana_password: "admin"
+#         apiKey: ""
+
+#       grafana_ssl:
+#         grafana_ssl_enabled: false
+#         ssl_certificate: "/path/to/ssl_certificate"
+#         ssl_key: "/path/to/ssl_key"
+#         ssl_certificate_authorities: "/path/to/ca_certificate"
+ 
+notifications: []
+# notifications:
+#     # name of the notification channel. Required
+#   - name: "Sendgrid"
+#     # In org where skedler is going to create the notification channel, default is 'Main Org'. You can change it as your org name, If it is already created in skedler
+#     org_name: "Main Org"
+#     type: "mail"
+#     config:
+#       # Supported services are "Gmail","Outlook","SES","SES-US-EAST-1","SES-EU-EAST-1","SES-US-WEST-2","Others(Sendgrid)","Others"
+#       service: "Others(Sendgrid)"
+#       host: "smtp.sendgrid.net"
+#       port: "587"
+#       username: ""
+#       password: ""
+#       senderEmail: ""
+#       adminMail: ""
+#       ssl: false
+      
+#     # name of the notification channel. Required
+#   - name: "Slack-1"
+#     # In org where skedler is going to create the notification channel, default is 'Main Org'. You can change it as your org name, If it is already created in skedler
+#     org_name: "Main Org"
+#     type: "slack"
+#     config:
+#       token: "xxxxx-xxxxxx-xxxxxx-xxxxx"
+#       admin: "@xxxxx"

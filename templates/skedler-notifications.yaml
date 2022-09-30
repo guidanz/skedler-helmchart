@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skedler-notifications
+  labels:
+    app: skedler
+data:
+  notifications.yml: |-
+    ##########
+    notifications: 
+      {{- if .Values.notifications }}
+      {{- tpl (toYaml .Values.notifications) . | nindent 4 }}
+      {{- end }}

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skedler-orgs
+  labels:
+    app: skedler
+data:
+  orgs.yml: |-
+    ##########
+    orgs: 
+      {{- if .Values.orgs }}
+      {{- tpl (toYaml .Values.orgs) . | nindent 4 }}
+      {{- end }}
+     
