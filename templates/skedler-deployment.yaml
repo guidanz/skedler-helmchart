@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: skedler
-        image: skedler/reports:provision
+        image: skedler/reports:latest
         imagePullPolicy: Always
         ports:
         - containerPort: {{ .Values.service.port }}
