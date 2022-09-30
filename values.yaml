@@ -121,7 +121,6 @@ datasources: []
 #         grafana_username: "admin"
 #         grafana_password: "admin"
 #         apiKey: ""
-
 #       grafana_ssl:
 #         grafana_ssl_enabled: false
 #         ssl_certificate: "/path/to/ssl_certificate"
