@@ -97,9 +97,6 @@ protocol: "http"
 licenseEmail: ""
 licenseKey: ""
 
-
-
-
 orgs: []
 # orgs: 
 #   # name of the org to create in Skedler. Required
