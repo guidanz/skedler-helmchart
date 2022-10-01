@@ -97,14 +97,15 @@ protocol: "http"
 licenseEmail: ""
 licenseKey: ""
 
+# Org Provisioning
 orgs: []
 # orgs: 
 #   # name of the org to create in Skedler. Required
 #   - name: First Org
 #   - name: Second Org
 
+# Datasources Provisioning
 datasources: []
-
 # datasources:
 #     # name of the datasource. Required
 #   - name: "Grafana-1"
@@ -126,7 +127,8 @@ datasources: []
 #         ssl_certificate: "/path/to/ssl_certificate"
 #         ssl_key: "/path/to/ssl_key"
 #         ssl_certificate_authorities: "/path/to/ca_certificate"
- 
+
+# Notifications Provisioning
 notifications: []
 # notifications:
 #     # name of the notification channel. Required
