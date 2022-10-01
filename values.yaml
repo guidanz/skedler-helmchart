@@ -89,7 +89,7 @@ skedlerPassword: "admin"
 redisPort: 6379
 
 # The public facing host name or IP address used to access Skdler from a browser
-host: "0.0.0.0"
+host: "127.0.0.1"
 # Protocol (http, https)
 protocol: "http"
 
