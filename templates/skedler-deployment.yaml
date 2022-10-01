@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: skedler
-        image: skedler/reports:latest
-        imagePullPolicy: Always
+        image: {{ .Values.image.repository }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.port }}
           protocol: TCP
