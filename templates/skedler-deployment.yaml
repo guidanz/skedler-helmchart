@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: skedler
+  name: {{ .Release.Name }}
   labels:
     app: skedler
 spec:
@@ -14,6 +14,10 @@ spec:
       labels:
         app: skedler
     spec:
+      {{- if .Values.podSecurityContext }}
+      securityContext: 
+        {{ (toYaml .Values.podSecurityContext) | nindent 10 -}}
+      {{- end }}  
       containers:
       - name: skedler
         image: {{ .Values.image.repository }}
@@ -24,50 +28,43 @@ spec:
         volumeMounts:
         - name: skedler-storage
           mountPath: /var/lib/skedler-xg
-        - name: skedler-config 
+        - name: {{ .Release.Name }}-config 
           mountPath: /usr/share/skedler-xg/reporting.yml
           subPath: reporting.yml
-        - name: skedler-orgs 
+        - name: {{ .Release.Name }}-orgs 
           mountPath: /usr/share/skedler-xg/provisioning/orgs/orgs.yml
           subPath: orgs.yml
-        - name: skedler-datasources 
+        - name: {{ .Release.Name }}-datasources 
           mountPath: /usr/share/skedler-xg/provisioning/datasources/datasources.yml
           subPath: datasources.yml
-        - name: skedler-notifications 
+        - name: {{ .Release.Name }}-notifications 
           mountPath: /usr/share/skedler-xg/provisioning/notifications/notifications.yml
           subPath: notifications.yml
       volumes:
       - name: skedler-storage
-      - name: skedler-config
+        {{- if and .Values.persistence.enabled (eq .Values.persistence.type "pvc") }}
+        persistentVolumeClaim:
+          {{- if .Values.persistence.existingClaim }}
+          claimName:  {{ .Values.persistence.existingClaim }}
+          {{- else }}
+          claimName: {{ .Release.Name }}-pvc
+        {{- end }}
+        {{- end }}
+      - name: {{ .Release.Name }}-config
         configMap:
           defaultMode: 420
-          name: skedler-config
-      - name: skedler-orgs
-        configMap:
-          defaultMode: 420
-          name: skedler-orgs
-      - name: skedler-datasources
-        configMap:
-          defaultMode: 420
-          name: skedler-datasources
-      - name: skedler-notifications
-        configMap:
-          defaultMode: 420
-          name: skedler-notifications
-
-    
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: skedler
-  labels:
-    app: skedler
-spec:
-  selector:
-    app: skedler
-  ports:
-  - port: {{ .Values.service.port }}
-    protocol: TCP
-  type: {{ .Values.service.type }}
+          name: {{ .Release.Name }}-config
+      - name: {{ .Release.Name }}-orgs
+        secret:
+          secretName: {{ .Release.Name }}-orgs
+          optional: false
+      - name: {{ .Release.Name }}-datasources
+        secret:
+          secretName: {{ .Release.Name }}-datasources
+          optional: false
+      - name: {{ .Release.Name }}-notifications
+        secret:
+          secretName: {{ .Release.Name }}-notifications
+          optional: false
+      
   

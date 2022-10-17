@@ -1,12 +1,12 @@
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
-  name: skedler-orgs
+  name: {{ .Release.Name }}-orgs
   labels:
     app: skedler
-data:
-  orgs.yml: |-
-    ##########
+type: Opaque
+stringData:
+  orgs.yml: |
     orgs: 
       {{- if .Values.orgs }}
       {{- tpl (toYaml .Values.orgs) . | nindent 4 }}

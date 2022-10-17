@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: skedler-config
+  name: {{ .Release.Name }}-config
   labels:
     app: skedler
 data:
@@ -70,7 +70,7 @@ data:
     # Specially for Docker/VM to persist the license which has been activated previously
     licenseEmail: {{ .Values.licenseEmail }}
     licenseKey: {{ .Values.licenseKey }}
-
+    
     ################################################## MIGRATION SETTINGS ###################################################
     # Specify the datastore you want to migrate from Skedler 4.x For example: sqlite, mysql, elasticsearch
     # migrationSourceDatastore: 'sqlite'

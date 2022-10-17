@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-skedler
+  labels:
+    app: skedler
+spec:
+  selector:
+    app: skedler
+  ports:
+  {{- if .Values.ingress.enabled }}
+  - port: {{ .Values.ingress.port }}
+    targetPort: {{ .Values.service.port }}
+    protocol: TCP
+  {{- if eq .Values.service.type "ClusterIP" }}
+  type: ClusterIP
+  clusterIP: {{ .Values.host }}
+  {{- else }}
+  type: {{ .Values.service.type }}
+  {{ end }}
+  {{- else }}
+  - port: {{ .Values.service.port }}
+    protocol: TCP
+  type: {{ .Values.service.type }}
+  {{ end }}
+    
+  
+  
