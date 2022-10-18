@@ -51,9 +51,9 @@ spec:
         {{- end }}
         {{- end }}
       - name: {{ .Release.Name }}-config
-        configMap:
-          defaultMode: 420
-          name: {{ .Release.Name }}-config
+        secret:
+          secretName: {{ .Release.Name }}-config
+          optional: false
       - name: {{ .Release.Name }}-orgs
         secret:
           secretName: {{ .Release.Name }}-orgs
