@@ -55,7 +55,8 @@ ingress:
   # pathType is only for k8s >= 1.1=
   pathType: Prefix
   host: chart-example.local
-
+  # Please provide the Cluster Ip address if the service type is "ClusterIP" 
+  # ClusterIP:
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

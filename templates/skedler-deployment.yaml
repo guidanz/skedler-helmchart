@@ -17,7 +17,9 @@ spec:
       {{- if .Values.podSecurityContext }}
       securityContext: 
         {{ (toYaml .Values.podSecurityContext) | nindent 10 -}}
-      {{- end }}  
+      {{- end }} 
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      automountServiceAccountToken: {{ .Values.serviceAccount.autoMount }}   
       containers:
       - name: skedler
         image: {{ .Values.image.repository }}

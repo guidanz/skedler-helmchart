@@ -20,4 +20,9 @@ spec:
               name: {{ .Release.Name }}-skedler
               port:
                 number: {{ .Values.service.port }}
+  tls:
+    {{- if .Values.ingress.tls }}
+    {{- tpl (toYaml .Values.ingress.tls) . | nindent 4 }}
+    {{- end }}
+
 {{- end }}

@@ -14,7 +14,7 @@ spec:
     protocol: TCP
   {{- if eq .Values.service.type "ClusterIP" }}
   type: ClusterIP
-  clusterIP: {{ .Values.host }}
+  clusterIP: {{ .Values.ingress.ClusterIP }}
   {{- else }}
   type: {{ .Values.service.type }}
   {{ end }}
