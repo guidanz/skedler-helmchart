@@ -1,0 +1,12 @@
+{{- if .Values.persistentVolume }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}-pv
+spec:
+  {{- if .Values.persistentVolume }}
+  {{- tpl (toYaml .Values.persistentVolume) . | nindent 4 }}
+  {{- end }}
+{{- end }}
+
+ 
