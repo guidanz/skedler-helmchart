@@ -1,18 +1,17 @@
-{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) (eq .Values.persistence.type "pvc")}}
+{{- if and .Values.persistentVolumeClaim.enabled (not .Values.persistentVolumeClaim.existingClaim)}}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ .Release.Name }}-pvc
 spec:
   accessModes:
-    {{- range .Values.persistence.accessModes }}
+    {{- range .Values.persistentVolumeClaim.accessModes }}
     - {{ . | quote }}
     {{- end }}
   resources:
     requests:
-      storage: {{ .Values.persistence.size }}
-  {{- if .Values.persistence.storageClassName }}
-  storageClassName: {{ .Values.persistence.storageClassName }}
+      storage: {{ .Values.persistentVolumeClaim.size }}
+  {{- if .Values.persistentVolumeClaim.storageClassName }}
+  storageClassName: {{ .Values.persistentVolumeClaim.storageClassName }}
   {{- end -}}
 {{- end -}}
-

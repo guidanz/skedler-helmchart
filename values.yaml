@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: skedler/reports:5.15.0
+  repository: skedler/reports:6.0.2
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -88,18 +88,34 @@ tolerations: []
 
 affinity: {}
 
+## Enable persistence using Persistent Volume
+## Below is the example persitent volume with AWS EBS. You can reconfigure it with any other PVs like nfs,azure etc.
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+## If you are using any persistentVolume, make sure that "persistentVolumeClaim" should be enabled & configured
+
+persistentVolume: {}
+  # capacity:
+  #   storage: 10Gi
+  # accessModes:
+  #   - ReadWriteOnce
+  # storageClassName: gp2
+  # csi:
+  #   driver: ebs.csi.aws.com
+  #   fsType: ext4
+  #   volumeHandle: <VolumeID>
+  
+
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-## Skedler supports only the "pvc" type 
-persistence:
-  type: pvc
-  enabled: true
-  # storageClassName: default
+persistentVolumeClaim: 
+  enabled: false
+  storageClassName:    # storage class name, leave empty to use default
   accessModes:
     - ReadWriteOnce
   size: 10Gi
-  ## Name of an existing PVC. Can be templated.
-  # existingClaim:
+  # existingClaim:        # Name of an existing PVC. Can be templated.
+
+
 
 # Skedler default username and password. You can change username & password for your convenient to create skedler account.
 skedlerUsername: "admin@skedler.com"

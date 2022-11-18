@@ -44,14 +44,12 @@ spec:
           subPath: notifications.yml
       volumes:
       - name: skedler-storage
-        {{- if and .Values.persistence.enabled (eq .Values.persistence.type "pvc") }}
+      {{- if and .Values.persistentVolumeClaim.enabled }}
         persistentVolumeClaim:
-          {{- if .Values.persistence.existingClaim }}
-          claimName:  {{ .Values.persistence.existingClaim }}
-          {{- else }}
           claimName: {{ .Release.Name }}-pvc
-        {{- end }}
-        {{- end }}
+      {{- else if .Values.persistentVolumeClaim.existingClaim }}
+          claimName:  {{ .Values.persistentVolumeClaim.existingClaim }}
+      {{- end }}
       - name: {{ .Release.Name }}-config
         secret:
           secretName: {{ .Release.Name }}-config
