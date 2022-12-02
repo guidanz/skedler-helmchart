@@ -12,7 +12,7 @@ entries:
     - skedler-6.0.2.tgz
     version: 6.0.2
   - apiVersion: v2
-    appVersion: 1.16.0
+    appVersion: 5.15.0
     created: "2022-11-18T20:21:33.265891+05:30"
     description: A Helm chart for Kubernetes
     digest: 5ef2690fb4bb47e1cf5a159352d67c6816b69f341f98fe77950d3be92f9b6be0
