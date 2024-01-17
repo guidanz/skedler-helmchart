@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   skedler:
   - apiVersion: v2
+    appVersion: 6.11.1
+    created: "2024-01-17T04:48:40.151465205-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 3d8dfc5b0a93761ebcc715242945f32b457db9a915f64d83ce135aef85cd1138
+    name: skedler
+    type: application
+    urls:
+    - skedler-6.11.1.tgz
+    version: 6.11.1
+  - apiVersion: v2
     appVersion: 6.11.0
-    created: "2023-12-21T01:33:40.685094121-05:00"
+    created: "2024-01-17T04:48:40.150977913-05:00"
     description: A Helm chart for Kubernetes
     digest: 6b6a322b8c9bbe85ca44a4e6370ac35dadc20376b3582f99b2c599c911a49ddc
     name: skedler
@@ -13,7 +23,7 @@ entries:
     version: 6.11.0
   - apiVersion: v2
     appVersion: 6.10.4
-    created: "2023-12-21T01:33:40.684601151-05:00"
+    created: "2024-01-17T04:48:40.150492589-05:00"
     description: A Helm chart for Kubernetes
     digest: 5f7d28f258ac32cef0af75f4c8e6671b5388a49850b2770da5b6e628a8432635
     name: skedler
@@ -23,7 +33,7 @@ entries:
     version: 6.10.4
   - apiVersion: v2
     appVersion: 6.10.3
-    created: "2023-12-21T01:33:40.68410611-05:00"
+    created: "2024-01-17T04:48:40.150009746-05:00"
     description: A Helm chart for Kubernetes
     digest: 487740832a38f401568416a4baeab3136c30368623c935c0e197811b9bc33933
     name: skedler
@@ -33,7 +43,7 @@ entries:
     version: 6.10.3
   - apiVersion: v2
     appVersion: 6.10.1
-    created: "2023-12-21T01:33:40.683568703-05:00"
+    created: "2024-01-17T04:48:40.149508077-05:00"
     description: A Helm chart for Kubernetes
     digest: 29dde17437e7f2857075b107534ea56329706b75a096449c525329630aeba7eb
     name: skedler
@@ -43,7 +53,7 @@ entries:
     version: 6.10.1
   - apiVersion: v2
     appVersion: 6.10.0
-    created: "2023-12-21T01:33:40.683079896-05:00"
+    created: "2024-01-17T04:48:40.149018486-05:00"
     description: A Helm chart for Kubernetes
     digest: f02ba320110cf2f480f04ebbcdcaeeb03fae67ce7733eb487f5dfd2015fd884a
     name: skedler
@@ -53,7 +63,7 @@ entries:
     version: 6.10.0
   - apiVersion: v2
     appVersion: 6.9.1
-    created: "2023-12-21T01:33:40.717492699-05:00"
+    created: "2024-01-17T04:48:40.157144842-05:00"
     description: A Helm chart for Kubernetes
     digest: 0dc9b676c31cbfc09021f7145e61dcb7b245a462438c72405373ed1578a74cba
     name: skedler
@@ -63,7 +73,7 @@ entries:
     version: 6.9.1
   - apiVersion: v2
     appVersion: 6.9.0
-    created: "2023-12-21T01:33:40.716925357-05:00"
+    created: "2024-01-17T04:48:40.156615976-05:00"
     description: A Helm chart for Kubernetes
     digest: 827738e8a92cbe778a791b888ff70a7c65c21a949f991290a2bcb88048956509
     name: skedler
@@ -73,7 +83,7 @@ entries:
     version: 6.9.0
   - apiVersion: v2
     appVersion: 6.8.0
-    created: "2023-12-21T01:33:40.689798841-05:00"
+    created: "2024-01-17T04:48:40.156099371-05:00"
     description: A Helm chart for Kubernetes
     digest: a0d2da7bd703329f1a44b2a6d15d30dd4c433cbe5ddce0890a7d1a1cdfb155ee
     name: skedler
@@ -83,7 +93,7 @@ entries:
     version: 6.8.0
   - apiVersion: v2
     appVersion: 6.7.1
-    created: "2023-12-21T01:33:40.68923249-05:00"
+    created: "2024-01-17T04:48:40.155532018-05:00"
     description: A Helm chart for Kubernetes
     digest: 52712f30ab4b28b6c1eea5386da8038a03a20baee38347d1438fdc2ca219917d
     name: skedler
@@ -93,7 +103,7 @@ entries:
     version: 6.7.1
   - apiVersion: v2
     appVersion: 6.7.0
-    created: "2023-12-21T01:33:40.688669447-05:00"
+    created: "2024-01-17T04:48:40.15501325-05:00"
     description: A Helm chart for Kubernetes
     digest: f390818e37ca4bf3f52573a8f7f23c618c037e42a779219f7a2be9dea6588958
     name: skedler
@@ -103,7 +113,7 @@ entries:
     version: 6.7.0
   - apiVersion: v2
     appVersion: 6.6.0
-    created: "2023-12-21T01:33:40.68809599-05:00"
+    created: "2024-01-17T04:48:40.154490929-05:00"
     description: A Helm chart for Kubernetes
     digest: 0d9c6c57bcd0cfa5cb1c66451609221aeb96b01e6c402a8184d23cd03708fbb3
     name: skedler
@@ -113,7 +123,7 @@ entries:
     version: 6.6.0
   - apiVersion: v2
     appVersion: 6.5.1
-    created: "2023-12-21T01:33:40.687560435-05:00"
+    created: "2024-01-17T04:48:40.153962822-05:00"
     description: A Helm chart for Kubernetes
     digest: 0c640ac2aeb226ea0f01884a3f9fd9bc7a5e07f7a537a75580bfdacee3cc0db7
     name: skedler
@@ -123,7 +133,7 @@ entries:
     version: 6.5.1
   - apiVersion: v2
     appVersion: 6.4.0
-    created: "2023-12-21T01:33:40.687078767-05:00"
+    created: "2024-01-17T04:48:40.153478334-05:00"
     description: A Helm chart for Kubernetes
     digest: 14f9f2f41d13c9afc493ed1063460090f525eebdcecf46afad1cd7582d5564e0
     name: skedler
@@ -133,7 +143,7 @@ entries:
     version: 6.4.0
   - apiVersion: v2
     appVersion: 6.3.1
-    created: "2023-12-21T01:33:40.686568477-05:00"
+    created: "2024-01-17T04:48:40.152989492-05:00"
     description: A Helm chart for Kubernetes
     digest: 70f7b270c2c7f9c12512cb6ab294fee7fb5f0118441f470c86bbbce82ce37da2
     name: skedler
@@ -143,7 +153,7 @@ entries:
     version: 6.3.1
   - apiVersion: v2
     appVersion: 6.3.0
-    created: "2023-12-21T01:33:40.686090764-05:00"
+    created: "2024-01-17T04:48:40.152493541-05:00"
     description: A Helm chart for Kubernetes
     digest: 11eb3d669ac9d53ac1477eed029b62dbe21a6b140dbe454794ab7e6083b54dd5
     name: skedler
@@ -153,7 +163,7 @@ entries:
     version: 6.3.0
   - apiVersion: v2
     appVersion: 6.2.1
-    created: "2023-12-21T01:33:40.685592891-05:00"
+    created: "2024-01-17T04:48:40.152012132-05:00"
     description: A Helm chart for Kubernetes
     digest: 6c31c578489e0b33e67b5da268b7992fd5d282546cc1d270ab6592f25f316f81
     name: skedler
@@ -163,7 +173,7 @@ entries:
     version: 6.2.1
   - apiVersion: v2
     appVersion: 6.1.0
-    created: "2023-12-21T01:33:40.682585629-05:00"
+    created: "2024-01-17T04:48:40.148514665-05:00"
     description: A Helm chart for Kubernetes
     digest: a30b6cdd0e6ee3650c9194b36796622ee6d07db1a07c60281ebc845c26cc63d1
     name: skedler
@@ -173,7 +183,7 @@ entries:
     version: 6.1.0
   - apiVersion: v2
     appVersion: 6.0.2
-    created: "2023-12-21T01:33:40.682090033-05:00"
+    created: "2024-01-17T04:48:40.148009895-05:00"
     description: A Helm chart for Kubernetes
     digest: f5d72f61b9480bf38c61e342a222faa657c4489302bd2107828d54847c14587f
     name: skedler
@@ -183,7 +193,7 @@ entries:
     version: 6.0.2
   - apiVersion: v2
     appVersion: 5.15.0
-    created: "2023-12-21T01:33:40.677564895-05:00"
+    created: "2024-01-17T04:48:40.143346426-05:00"
     description: A Helm chart for Kubernetes
     digest: ecf12e9f481f75e3d2a24343621c45b50b0e781296e715e756ba911f45c4afa5
     name: skedler
@@ -191,4 +201,4 @@ entries:
     urls:
     - skedler-5.15.0.tgz
     version: 5.15.0
-generated: "2023-12-21T01:33:40.673831235-05:00"
+generated: "2024-01-17T04:48:40.139659373-05:00"
