@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: skedler/reports:6.13.5
+  repository: skedler/reports:6.13.6
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
